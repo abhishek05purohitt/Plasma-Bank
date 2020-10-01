@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albania Coronavirus Info Live</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+</head>
+<body style="background-color: #15202b""> 
+    <div class="text-center">
+        <h3 style="color: white;" class="p-3 bg-primary">Corona Prone Score  </h3>
+    </div>
+    <div class="container">
+
+        <section id="counter" class="section-padding">
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                  <div class="mt-4 text-center row">
+
+
+<center>
+<div class="card text-left" style="width: 35rem;">
+  <div class="card-body">
+       <div class="form-group">
+      <form action = "/predict" method = "POST">
+         <h3> Corona Prone Score</h3>
+         
+          <label for="BP">BP</label>
+         <Input type="number" name = "BP" class="form-control" required/>
+
+          <label for="Sugar">Sugar</label>
+         <input type = "number" name = "Sugar" class="form-control" required/>
+
+          <label for="oxvalue">Oxygen count</label>
+         <input type = "number" name = "oxvalue" class="form-control" required/> <br>
+
+        
+
+     <button type="submit" class="btn btn-primary">Submit</button><br><br>
+     <h5> &nbsp; &nbsp; {{ prediction_text }}</h5>
+      </form>
+      </div>
+      </div>
+       
+       
+      
+      </center>
+      <br>
+      <br>
+      <br>
+        </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Counter Section End -->
+
+    </div>
+    <br>
+    <br>
+    <footer>
+
+
+        <body style="background-color: #15202b""> 
+    <div class="text-center">
+        <h6 style="color: Black;" class="bg-success"> Disclaimer:<br> &nbsp;&nbsp; &nbsp;This score is calculated using Artificial Intelligence by analysing data of the some COVID19 affected patient and healthy person corona prone score tells about how much chances people have according to
+      some health factors such as BP,Sugar,Oxygen Count. </h6>
+    </div>
+     
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+
+  
+  
+  
+  {% endblock %}
+    
